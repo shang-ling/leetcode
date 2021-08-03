@@ -7,17 +7,6 @@ package com.ling.leetcode.d20210729;
  * @create: 2021-07-29 10:26
  **/
 public class T70 {
-    public int climbStairs(int n) {
-
-        // 超时
-        // 递归每层都是前一层+前两层
-        if (n == 0 || n ==1) {
-            return 1;
-        }
-
-        return climbStairs(n - 1) + climbStairs(n - 2);
-
-    }
 
     // 记忆优化：增加一个数组来存放计算结果，减少重复计算
     public int climbStairs2(int n) {
@@ -35,8 +24,19 @@ public class T70 {
              memo[n] = climbStairsMemo(n - 1, memo) + climbStairsMemo(n - 2, memo);
          }
          return memo[n];
-
     }
 
+    /**
+     * 该方法因为重复计算导致超时
+     * @param n 楼梯总阶数
+     * @return
+     */
+    public int climbStairs(int n) {
 
+        // 递归每层都是前一层+前两层
+        if (n == 0 || n ==1) {
+            return 1;
+        }
+        return climbStairs(n - 1) + climbStairs(n - 2);
+    }
 }

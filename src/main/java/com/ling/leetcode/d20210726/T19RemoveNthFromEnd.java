@@ -1,10 +1,9 @@
 package com.ling.leetcode.d20210726;
 
 /**
- * @program: LeetCode_Brush_Questions
- * @description: 给一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
- * @author: ling
- * @create: 2021-07-25 23:07
+ * 给一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+ * @author ling
+ * @data 2021-07-25 23:07
  **/
 public class T19RemoveNthFromEnd {
 
@@ -32,7 +31,6 @@ public class T19RemoveNthFromEnd {
 
         return head;
     }
-
 
     public static class ListNode {
         int val;
