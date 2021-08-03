@@ -3,8 +3,7 @@ package com.ling.leetcode.d20210801;
 import java.util.*;
 
 /**
- * @program: leetcode
- * @description: 给一个大小为 m * n 的矩阵 mat，矩阵由若干军人和平民组成，分别用 1 和 0 表示返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序
+ * 给一个大小为 m * n 的矩阵 mat，矩阵由若干军人和平民组成，分别用 1 和 0 表示返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序
  * @author: ling
  * @create: 2021-08-01 08:09
  **/
@@ -16,15 +15,8 @@ public class T1337 {
         int n = mat[0].length;
 
         for (int i = 0; i < m; ++i) {
-            // int count = 0;
-            // for (int j = 0; j <= n; ++j) {
-            //     // java.lang.ArrayIndexOutOfBoundsException: 5
-            //     int a = mat[i][j];
-            //     if (a == 1) {
-            //         count++;
-            //     }
-            // }
             int l = 0, r = n - 1, pos = -1;
+
             while (l <= r) {
                 int mid = (l + r) / 2;
                 if (mat[i][mid] == 0) {
@@ -34,7 +26,6 @@ public class T1337 {
                     l = mid + 1;
                 }
             }
-
             list.add(new int[]{pos, i});
         }
 
@@ -80,7 +71,6 @@ public class T1337 {
             }
             list.add(new int[]{m, count});
         }
-
         return result;
     }
 }
